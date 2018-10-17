@@ -1,0 +1,29 @@
+/**
+ * CSS Selectors: Codex(https://codex.wordpress.org/Customizing_the_Login_Form)에서 참고하세요.
+ */
+
+.login h1 a {
+	background-image: url('../images/loginlogo.png');
+	background-size: 80px;
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+body.login div#login {
+	width: 30%;
+	min-width: 320px;
+	padding: 2% 0 0;
+}
+body.login div#login input[type=text], 
+body.login div#login input[type=password],
+body.login div#login input[type=email],
+body.login div#login input[type=number],
+body.login div#login .login_message	input[type=text],
+body.login div#login form#loginform p.submit input#wp-submit {
+	width: 100%;
+	height: 40px;
+	font-size: 1.4em;
+}
+body.login div#login form#loginform p.forgetmenot {
+	display: none;
+}
+

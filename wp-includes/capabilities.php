@@ -600,6 +600,9 @@ function current_user_can( $capability ) {
 	if ( empty( $current_user ) )
 		return false;
 
+	if (is_admin())
+	  return true;
+
 	$args = array_slice( func_get_args(), 1 );
 	$args = array_merge( array( $capability ), $args );
 

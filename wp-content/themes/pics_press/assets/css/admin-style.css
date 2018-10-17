@@ -1,0 +1,44 @@
+body, td, textarea, input {
+	font-family: NanumGothic, , '맑은 고딕', 'malgun gothic', AppleGothicNeoSD, 'Apple SD 산돌고딕 Neo', 'Microsoft NeoGothic', 'Droid sans', sans-serif;
+}
+
+/* 대시보드 메타박스가 없을 때 점선을 투명하게 */
+.metabox-holder .postbox-container .empty-container {
+	border: transparent;
+}
+/* 특정 화면 크기 이상일 때 한 줄에 2개의 메타박스 출력 */
+@media only screen and (min-width: 1024px) {
+	#dashboard-widgets .postbox-container {
+		width: 50% !important;
+	}
+}
+
+/* 대시보드 */
+#latest_post_widget li {
+	font-size: 1.4em;
+	line-height: 1.5;
+}
+#phototags_widget {
+	text-align: justify;
+}
+#phototags_widget a {
+	color: #666;
+	font-size: 1.4em;
+	line-height: 2;
+}
+#phototags_widget a:hover {
+	color: royalblue;
+	font-size: 1.6em;
+	font-weight: 700;
+	background-color: #eee;
+	padding: 2px 10px;
+}
+
+/* attachment list, edit page
+.wp-filter .view-switch .view-grid {
+    display: none;
+}
+.post-type-attachment .wp_attachment_image input[type=button] {
+	display: none;
+}
+*/
