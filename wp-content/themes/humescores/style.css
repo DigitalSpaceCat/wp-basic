@@ -442,36 +442,29 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, 0.8);
-	font-size: 15px;
-	font-size: 0.9375rem;
+	border: 2px solid;
+	border-color: black;
+	background: transparent;
+	color: black;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-size: 20px;
+	font-size: 1.25rem;
 	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	padding: .5em 1em;
 }
 
-button:hover,
+button:hover, button:active, button:focus,
 input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-}
-
-button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
+input[type="reset"]:hover,
 input[type="reset"]:active,
 input[type="reset"]:focus,
+input[type="submit"]:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+	background: white;
+	color: black;
 }
 
 input[type="text"],
@@ -704,7 +697,6 @@ a:hover, a:active {
 }
 
 .site-branding {
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	min-height: 65px;
@@ -721,16 +713,12 @@ a:hover, a:active {
 }
 
 .site-branding__text {
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	-ms-flex-pack: center;
+	    justify-content: center;
 	height: 65px;
 }
 
@@ -760,18 +748,15 @@ a:hover, a:active {
 
 @media screen and (min-width: 900px) {
 	.site-header {
-		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-pack: justify;
-		    -ms-flex-pack: justify;
-		        justify-content: space-between;
+		-ms-flex-pack: justify;
+		    justify-content: space-between;
 	}
 	.site-branding {
 		width: 35%;
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 0 auto;
-		        flex: 1 0 auto;
+		-ms-flex: 1 0 auto;
+		    flex: 1 0 auto;
 	}
 	.site-navigation {
 		width: 55%;
@@ -891,17 +876,14 @@ button.dropdown-toggle {
 	}
 	.main-navigation ul {
 		display: block;
-		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
 	}
 	.main-navigation ul ul {
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
+		-ms-flex-direction: column;
+		    flex-direction: column;
 		background: rgba(255, 255, 255, 0.1);
 		margin-left: 0;
 	}
@@ -919,9 +901,8 @@ button.dropdown-toggle {
 
 @media screen and (min-width: 900px) {
 	.main-navigation ul {
-		-webkit-box-pack: end;
-		    -ms-flex-pack: end;
-		        justify-content: flex-end;
+		-ms-flex-pack: end;
+		    justify-content: flex-end;
 		padding-top: 0;
 		/* If you want dropdowns to open on hover, uncomment this: */
 		/*
