@@ -10,32 +10,43 @@ get_header(); ?>
 
 		<?php
 		// 여기서
-
-		echo '<style>table#_table thead td{color:#454545;font-weight:700}table#_table td{padding: 10px;border:1px solid #c4c4c4}table#_table .exc{background-color:#f3f3f3}table#_table .meta{background-color:#e5f2fe}</style>';
-		$_attachments = get_posts( array( 'post_type' => 'attachment' ) );
-		echo '<table id="_table"><thead>';
-		echo '<tr>';
-		echo '<td>I</td><td>post_title</td><td>post_type</td><td>post_content</td><td>post_excerpt</td><td class="meta">대체 텍스트(alt)</td><td>post_parent</td><td class="exc">첨부 포스트 제목</td><td class="exc">Parent 포스트 타입</td><td>post_status</td><td>post_mime_type</td>';
-		echo '</tr></thead>';
-		echo '<tbody>';
-		foreach ( $_attachments as $post ) {
-			echo '<tr>';
-			echo '<td><img src="' . $post->guid . '" width="100px"></td>';
-			echo '<td>' . $post->post_title . '</td>';
-			echo '<td>' . $post->post_type . '</td>';
-			echo '<td>' . $post->post_content . '</td>';
-			echo '<td>' . $post->post_excerpt . '</td>';
-			echo '<td class="meta">' . get_post_meta( $post->ID, '_wp_attachment_image_alt', true) . '</td>';
-			echo '<td>' . $post->post_parent . '</td>';
-			echo '<td class="exc">' . get_post_field('post_title', $post->post_parent) . '</td>';
-			echo '<td class="exc">' . get_post_field('post_type', $post->post_parent) . '</td>';
-			echo '<td>' . $post->post_status . '</td>';
-			echo '<td>' . $post->post_mime_type . '</td>';
-			echo '</tr>';
-		}
-		echo '</tbody></table>';
+		$arg = array(
+    'post_type' => 'attachment',
+    'posts_per_page' => 1,
+);
+$img_query = get_posts( $arg );
+foreach( $img_query as $img ) {
+    $attach_id = $img->ID;
+    $meta = wp_get_attachment_metadata( $attach_id );
+    echo '<pre>' . print_r( $meta, true ) . '</pre>';
+}
+//
+$arg = array(
+	'post_type' => 'attachment',
+	'posts_per_page' => 1,
+);
+$img_query = get_posts( $arg );
+foreach( $img_query as $img ) {
+	$attach_id = $img->ID;
+	$meta = wp_get_attachment_metadata( $attach_id );
+	$full_size_width = $meta['width'];
+	$full_size_height = $meta['height'];
+	$full_size_filename = $meta['file'];
+	$array_full = array(
+		'file' => $full_size_filename,
+		'width' => $full_size_width,
+		'height' => $full_size_height,
+	);
+	 // 원본 이미지를 추가한 이미지 사이즈별 데이터
+	$sizes_names = $meta['sizes'];
+	$sizes_names['full'] = $array_full; // full (원본 이미지) 이미지 사이즈 추가
+	unset( $sizes_names['thumbnail'] ); // thumbnail 제외
+	echo '<pre>' . print_r( $sizes_names, true ) . '</pre>';
+}
 
 		// 여기 사이에
+		
+		
 		?>
 
 		</main><!-- #main -->

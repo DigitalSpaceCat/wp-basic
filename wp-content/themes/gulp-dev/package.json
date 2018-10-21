@@ -18,7 +18,7 @@
   "homepage": "https://github.com/mor10/humescores#readme",
   "devDependencies": {
     "autoprefixer": "^6.5.2",
-    "browser-sync": "^2.17.6",
+    "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
     "gulp-image": "^4.3.0",
     "gulp-jshint": "^2.0.2",
@@ -26,6 +26,7 @@
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.2.0",
-    "jshint": "^2.9.4"
+    "jshint": "^2.9.4",
+    "node-sass": "^4.9.4"
   }
 }

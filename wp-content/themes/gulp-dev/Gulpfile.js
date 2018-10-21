@@ -62,9 +62,9 @@ gulp.task('watch', function() {
 		// https: true,
 		// port: 8080
 		
-		proxy: 'http://localhost/wordpress',
+		proxy: 'http://localhost/',
 		// https: true,
-        port: 8080,
+        port: 8081,
         ui: {
             port: 8082
         }
