@@ -44,8 +44,8 @@ endif; ?>
 			endwhile;
 
 			the_posts_pagination( array(
-				'prev_text' => __( 'Newer', 'humescores' ),
-				'next_text' => __( 'Older', 'humescores' ),
+				'prev_text' => humescores_get_svg( array( 'icon' => 'arrow-left' ) ) . __( 'Newer', 'humescores' ),
+				'next_text' => __( 'Older', 'humescores' ) . humescores_get_svg( array( 'icon' => 'arrow-right' ) ),
 				'before_page_number' => '<span class="screen-reader-text">' . __( 'Page ', 'humescores' ) . '</span>',
 			));
 
