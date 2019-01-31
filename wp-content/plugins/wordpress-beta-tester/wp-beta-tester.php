@@ -4,11 +4,12 @@
 	Plugin URI: https://wordpress.org/plugins/wordpress-beta-tester/
 	Description: Allows you to easily upgrade to Beta releases.
 	Author: Peter Westwood
-	Version: 1.2.3
+	Version: 1.2.6
 	Network: true
-	Author URI: http://blog.ftwr.co.uk/
+	Author URI: https://blog.ftwr.co.uk/
 	Text Domain: wordpress-beta-tester
 	License: GPL v2 or later
+	GitHub Plugin URI: https://github.com/afragen/wordpress-beta-tester
 */
 
 /*
@@ -35,7 +36,8 @@ class wp_beta_tester {
 		add_action( is_multisite() ? 'network_admin_menu' : 'admin_menu', array( $this, 'action_admin_menu' ) );
 		add_action( 'network_admin_edit_wp_beta_tester', array( $this, 'update_settings' ) );
 		add_action(
-			'update_option_wp_beta_tester_stream', array(
+			'update_option_wp_beta_tester_stream',
+			array(
 				$this,
 				'action_update_option_wp_beta_tester_stream',
 			)
@@ -80,7 +82,7 @@ class wp_beta_tester {
 				<?php
 				$admin_page = is_multisite() ? 'settings.php' : 'tools.php';
 				/* translators: %s: link to setting page */
-				printf( wp_kses_post( __( '<strong>Error:</strong> Your current <a href="%s">WordPress Beta Tester plugin configuration</a> will downgrade your install to a previous version - please reconfigure it.', 'wordpress-beta-tester' ), admin_url( $admin_page . '?page=wp_beta_tester' ) ) );
+				printf( wp_kses_post( __( '<strong>Error:</strong> Your current <a href="%s">WordPress Beta Tester plugin configuration</a> will downgrade your install to a previous version - please reconfigure it.', 'wordpress-beta-tester' ) ), admin_url( $admin_page . '?page=wp_beta_tester' ) );
 				?>
 				</p>
 			</div>
@@ -154,7 +156,7 @@ class wp_beta_tester {
 	protected function mangle_wp_version() {
 		$stream     = get_site_option( 'wp_beta_tester_stream', 'point' );
 		$preferred  = $this->_get_preferred_from_update_core();
-		$wp_version = $GLOBALS['wp_version'];
+		$wp_version = get_bloginfo( 'version' );
 
 		// If we're getting no updates back from get_preferred_from_update_core(),
 		// let an HTTP request go through unmangled.
@@ -204,7 +206,7 @@ class wp_beta_tester {
 			if ( ( isset( $_GET['updated'] ) && true == $_GET['updated'] ) ||
 				( isset( $_GET['settings-updated'] ) && true == $_GET['settings-updated'] )
 			) :
-			?>
+				?>
 				<div class="updated">
 					<p><?php esc_html_e( 'Saved.', 'wordpress-beta-tester' ); ?></p>
 				</div>
@@ -270,7 +272,7 @@ class wp_beta_tester {
 						value="<?php esc_html_e( 'Save Changes', 'wordpress-beta-tester' ); ?>" />
 					</p>
 				</form>
-				<p><?php echo( wp_kses_post( __( 'Why don&#8217;t you <a href="update-core.php">head on over and upgrade now</a>.', 'wordpress-beta-tester' ), '', '</a>' ) ); ?></p>
+				<p><?php echo( wp_kses_post( __( 'Why don&#8217;t you <a href="update-core.php">head on over and upgrade now</a>.', 'wordpress-beta-tester' ) ) ); ?></p>
 			</div>
 		</div>
 		<?php
@@ -281,8 +283,7 @@ class wp_beta_tester {
 add_action( 'plugins_loaded', 'load_beta_tester_plugin' );
 
 function load_beta_tester_plugin() {
-	global $wp_beta_tester_instance;
-	$wp_beta_tester_instance = new wp_beta_tester();
+	new wp_beta_tester();
 }
 
 // Clear down

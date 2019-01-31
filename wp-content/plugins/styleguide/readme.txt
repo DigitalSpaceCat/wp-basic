@@ -2,7 +2,7 @@
 Contributors: binarymoon
 Tags: customizer, css, color, colors, colour, colours, fonts, google fonts, localize, localization
 Requires at least: 4
-Tested up to: 4.9
+Tested up to: 5.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -113,6 +113,11 @@ add_filter( 'styleguide_get_fonts', 'my_fonts' );`
 2. Twenty Thirteen with some alternate colors
 
 == Changelog ==
+
+= 1.7.1 =
+* Tested with the latest version of WordPress.
+* Add support for Carmack theme.
+* Add Nunito and Nunito Sans fonts.
 
 = 1.7 =
 * Add support for Romero theme

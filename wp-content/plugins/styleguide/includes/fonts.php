@@ -162,6 +162,18 @@ function styleguide_fonts() {
 			'weight' => '400,700',
 			'sets' => array( 'latin', 'greek', 'vietnamese', 'cyrillic' ),
 		),
+		'Nunito' => array(
+			'name' => 'Nunito',
+			'family' => '"Nunito", sans-serif',
+			'weight' => '400,700',
+			'sets' => array( 'latin', 'vietnamese' ),
+		),
+		'Nunito Sans' => array(
+			'name' => 'Nunito Sans',
+			'family' => '"Nunito Sans", sans-serif',
+			'weight' => '400,700',
+			'sets' => array( 'latin', 'vietnamese' ),
+		),
 		'Open Sans' => array(
 			'name' => 'Open Sans',
 			'family' => '"Open Sans", sans-serif',

@@ -1,7 +1,7 @@
 <?php
 /**
  * Theme: Kent
- * Theme Url:
+ * Theme Url: https://prothemedesign.com/theme/kent/
  *
  * @package: styleguide
  */
