@@ -45,6 +45,8 @@ function house_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'house' ),
+		'top' => '위 메뉴',
+		'bottom' => '아래 메뉴'
 	) );
 
 	/*
