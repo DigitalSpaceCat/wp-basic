@@ -27,7 +27,9 @@
 
 <body <?php body_class(); ?>>
 	<!--[if lt IE 9]><p class="browsehappy alert alert-danger">최신 브라우저로 업데이트 하세요. 그렇지 않으면 이 알림이 계속 나옵니다. <a class="alert-link" href="http://browsehappy.com/">최신 브라우저 선택하기</a><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></p><![endif]-->
-<?php get_template_part( 'inc/menu', 'top' ); ?>
+	
+<?php get_template_part( 'inc/menu', 'top' ); ?>	
+
 <div id="page" class="hfeed site container">
 
 	<div id="content" class="site-content row">
