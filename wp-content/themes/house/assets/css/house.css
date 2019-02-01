@@ -1,0 +1,39 @@
+/**
+House Custom CSS
+*/
+
+body {
+	padding-top:10px;
+	font-family: "Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, AppleGothic, dotum, sans-serif;
+}
+
+.browsehappy {
+	margin:50px 0;
+	text-align: center;
+}
+
+.navbar-inverse {
+	background-color: #4679bd;
+	border-color: #5379ad;
+}
+
+.navbar-inverse .navbar-brand {	
+	color: #fff;
+	text-shadow: 0 0 5px #a3a3a3, 0 0 7px #a3a3a3;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: #fff;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+	background-color: #4072b4;
+}
+
+.site-footer {
+	background-color: #f5f5f5;
+}
+
+/* ---------*/

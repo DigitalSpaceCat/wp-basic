@@ -20,8 +20,10 @@ add_action( 'after_setup_theme', 'house_setup' );
  */
 function house_scripts() {
 	wp_enqueue_style( 'house-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'house-custom-style', get_template_directory_uri() . '/assets/css/house.css' );
 	wp_enqueue_script( 'house-bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '', false );
 }
 add_action( 'wp_enqueue_scripts', 'house_scripts' );
 
 require get_template_directory() . '/inc/template-tags.php';
+locate_template('inc/template-tags.php', true);
