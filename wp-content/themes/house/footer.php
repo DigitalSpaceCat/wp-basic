@@ -19,7 +19,11 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="bottom-navigation col-sm-6 col-sm-push-6">
-				Menu Bottom
+				<?php
+					if ( has_nav_menu('bottom') ) {
+						get_template_part( 'inc/menu', 'bottom' );
+					}
+				?>
 			</div><!-- footer right content -->
 			
 			<div class="footer-text col-sm-6 col-sm-pull-6">
