@@ -14,7 +14,13 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
+			<?php 
+				if ( 'house' == get_post_type() ) :
+					get_template_part( 'template-parts/content', 'house' );
+				else :
+					get_template_part( 'template-parts/content', 'single' );
+				endif;
+			?>
 
 			<?php the_post_navigation(); ?>
 

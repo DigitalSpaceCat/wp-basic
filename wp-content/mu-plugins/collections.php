@@ -1,16 +1,16 @@
 <?php
 /**
  * Plugin Name: Clean Up
- * Description: Cleaning Toolbars, Emoji, WP vers.
+ * Description: 툴바, Emoji, 워드프레스 버전 등 제거
  */
  
  /** 
-  * Front end toolbar
+  * 프런트 엔드 툴바
   */
 add_filter('show_admin_bar', '__return_false');
 
 /**
- * The info of the head
+ * 사이트 소스 <head> 태그 블록의  특정 정보
  */
 function house_head_cleanup() {
 	remove_action( 'wp_head', 'rsd_link' );
